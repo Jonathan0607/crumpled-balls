@@ -1,6 +1,6 @@
 class Boxleft extends Boxbase{
     constructor(x,y){
-        super(x,y,20,100)
+        super(x,y,20,90)
     }
     display(){
         super.display()

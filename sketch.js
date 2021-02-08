@@ -1,36 +1,37 @@
-const Engine = Matter.Engine;
-const World = Matter.World;
-const Bodies = Matter.Bodies;
-const Body = Matter.Body;
+const Engine= Matter.Engine;
+const World= Matter.World;
+const Bodies= Matter.Bodies;
 
-function preload()
-{
-	
-}
+var engine, world, boxb;
+var boxr, boxl;
 
 function setup() {
-	createCanvas(800, 700);
 
-
-	engine = Engine.create();
-	world = engine.world;
-
-	//Create the Bodies Here.
-	boxBase= new Boxbase(360,250,200,20)
-	boxRight=new Boxright(360,150)
-	boxLeft=new Boxleft(360,350)
-
-	//Engine.run(engine);
+  createCanvas(800,400);
+   engine= Engine.create();
+   world= engine.world;
   
+   ball=new Ball(50, 200, 25);
+   boxb= new Boxbase(650,300,200,20);
+   boxr= new Boxright(750,265);
+   boxl= new Boxleft(550,265);
+   ground = new Ground(600,320,10000,20);  
 }
-
 
 function draw() {
-  background("white");
-  Engine.update(engine);
-  boxBase.display()
-  boxRight.display()
-  boxBase.display()
- 
- 
+  background(0);  
+  Engine.update(engine)
+boxb.display();
+boxr.display();
+boxl.display();
+ground.display();
+ball.display()
 }
+
+function keyPressed(){
+  if(keyCode=== UP_ARROW){
+
+    Matter.Body.applyForce(ball.body,ball.body.position,{x:100,y:-100})
+  }
+}
+

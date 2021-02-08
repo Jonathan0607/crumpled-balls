@@ -13,9 +13,9 @@ class Boxbase{
         
     }
     display(){
-        fill("purple");
+        fill("yellow");
         rectMode(CENTER);   
-        rect(this.body.position.x, this.body.position.y,this.width,this,height)
-        //console.log(this.body);
+        rect(this.body.position.x, this.body.position.y,this.width,this.height)
+
     }
 }
